@@ -9,35 +9,39 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
         :root {
-            --primary: #86106a;
-            --primary-dark: #5e104b;
-            --primary-light: #fbeaf4;
-            --secondary: #2e2a39;
-            --accent-gold: #c9933b;
-            --bg-cream: #fdfbf7;
+            --primary: #701a53;
+            --primary-dark: #50133c;
+            --primary-light: #fdf2f8;
+            --secondary: #111827;
+            --accent-gold: #96703c;
+            --bg-page: #faf9f7;
             --bg-card: #ffffff;
-            --text-main: #2e2a39;
-            --text-muted: #6b6677;
-            --border-light: #ede8df;
+            --text-main: #111827;
+            --text-body: #374151;
+            --text-muted: #6b7280;
+            --text-light: #9ca3af;
+            --border-light: #e5e7eb;
+            --border-subtle: #f3f4f6;
             --whatsapp-green: #25D366;
             --whatsapp-dark: #128C7E;
-            --radius-sm: 8px;
-            --radius-md: 14px;
-            --radius-lg: 20px;
-            --shadow-subtle: 0 4px 20px rgba(46, 42, 57, 0.06);
-            --shadow-hover: 0 12px 30px rgba(134, 16, 106, 0.12);
-            --font-heading: 'Poppins', sans-serif;
-            --font-body: 'Playpen Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+            --radius-xs: 4px;
+            --radius-sm: 6px;
+            --radius-md: 10px;
+            --radius-lg: 16px;
+            --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+            --shadow-hover: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            letter-spacing: -0.01em;
         }
 
         html {
@@ -45,28 +49,41 @@
         }
 
         body {
-            background-color: var(--bg-cream);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
+            background-color: var(--bg-page);
+            color: var(--text-body);
+            font-family: var(--font-main);
+            line-height: 1.55;
             -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         /* Top Announcement Bar */
         .announcement-bar {
-            background: linear-gradient(90deg, #5e104b, #86106a, #a81c86);
-            color: #fff;
-            font-size: 13px;
+            background-color: #111827;
+            color: #d1d5db;
+            font-size: 11.5px;
             font-weight: 500;
-            padding: 9px 20px;
+            padding: 8px 20px;
             text-align: center;
-            letter-spacing: 0.3px;
+            letter-spacing: 0.04em;
+        }
+        .announcement-bar span {
+            color: #9ca3af;
+        }
+        .announcement-bar span b {
+            color: #f3f4f6;
+            font-weight: 600;
         }
         .announcement-bar a {
-            color: #ffde89;
+            color: #f3f4f6;
             text-decoration: underline;
+            text-underline-offset: 2px;
             margin-left: 8px;
             font-weight: 600;
+            transition: color 0.15s ease;
+        }
+        .announcement-bar a:hover {
+            color: #ffffff;
         }
 
         /* Header & Navigation */
@@ -75,8 +92,8 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 14px rgba(0, 0, 0, 0.05);
             border-bottom: 1px solid var(--border-light);
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
         }
         .nav-container {
             max-width: 1280px;
@@ -84,7 +101,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 12px 24px;
+            padding: 10px 24px;
         }
         .brand-logo-wrap {
             display: flex;
@@ -93,7 +110,7 @@
             text-decoration: none;
         }
         .brand-logo-img {
-            height: 48px;
+            height: 42px;
             width: auto;
             object-fit: contain;
         }
@@ -102,17 +119,16 @@
             flex-direction: column;
         }
         .brand-title {
-            font-family: var(--font-heading);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 800;
-            color: #111;
-            letter-spacing: 1px;
+            color: #111827;
+            letter-spacing: 0.06em;
             line-height: 1.1;
         }
         .brand-subtitle {
-            font-size: 11px;
-            color: var(--primary);
-            letter-spacing: 1.5px;
+            font-size: 9.5px;
+            color: var(--text-muted);
+            letter-spacing: 0.12em;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -125,187 +141,194 @@
         }
         .nav-links a {
             text-decoration: none;
-            color: var(--secondary);
-            font-size: 14px;
-            font-weight: 600;
-            transition: all 0.2s;
+            color: #4b5563;
+            font-size: 13.5px;
+            font-weight: 500;
+            transition: color 0.15s ease;
             position: relative;
         }
         .nav-links a:hover, .nav-links a.active {
-            color: var(--primary);
+            color: #111827;
+            font-weight: 600;
         }
         .nav-links a::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -5px;
             left: 0;
             width: 0%;
             height: 2px;
-            background: var(--primary);
-            transition: width 0.25s ease;
+            background: #111827;
+            transition: width 0.2s ease;
         }
-        .nav-links a:hover::after {
+        .nav-links a:hover::after, .nav-links a.active::after {
             width: 100%;
         }
 
         .nav-actions {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 10px;
         }
         .wishlist-btn {
-            background: var(--primary-light);
-            color: var(--primary);
-            border: none;
-            padding: 8px 14px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
+            background: #ffffff;
+            color: #374151;
+            border: 1px solid var(--border-light);
+            padding: 7px 13px;
+            border-radius: var(--radius-sm);
+            font-size: 12.5px;
+            font-weight: 500;
             cursor: pointer;
             display: flex;
             align-items: center;
             gap: 6px;
-            transition: all 0.2s;
+            transition: all 0.15s ease;
         }
         .wishlist-btn:hover {
-            background: var(--primary);
-            color: #fff;
+            background: #f9fafb;
+            border-color: #d1d5db;
+            color: #111827;
         }
         .btn-whatsapp-header {
-            background-color: var(--whatsapp-green);
+            background-color: #111827;
             color: #ffffff;
-            font-size: 13px;
+            font-size: 12.5px;
             font-weight: 600;
-            padding: 8px 16px;
-            border-radius: 20px;
+            padding: 7px 14px;
+            border-radius: var(--radius-sm);
             text-decoration: none;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            transition: background 0.2s;
+            transition: all 0.15s ease;
         }
         .btn-whatsapp-header:hover {
-            background-color: var(--whatsapp-dark);
+            background-color: var(--whatsapp-green);
+            color: #ffffff;
         }
 
         .hamburger {
             display: none;
             cursor: pointer;
-            font-size: 24px;
+            font-size: 22px;
             background: none;
             border: none;
-            color: var(--secondary);
+            color: #111827;
+            padding: 4px;
         }
 
-        /* Hero Banner */
+        /* Hero Banner - Editorial Minimalist */
         .hero-section {
-            background: linear-gradient(135deg, #f7eff5 0%, #fdfbf7 60%, #faeef6 100%);
+            background: #ffffff;
             border-bottom: 1px solid var(--border-light);
-            padding: 40px 24px 35px 24px;
+            padding: 42px 24px 38px 24px;
         }
         .hero-container {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 30px;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 36px;
             align-items: center;
         }
         .hero-badge {
             display: inline-block;
-            background: #fff;
-            color: var(--primary);
-            padding: 6px 14px;
+            background: #f9fafb;
+            color: #4b5563;
+            padding: 4px 12px;
             border-radius: 20px;
-            font-size: 12px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            border: 1px solid rgba(134, 16, 106, 0.2);
-            margin-bottom: 15px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            border: 1px solid var(--border-light);
+            margin-bottom: 14px;
         }
         .hero-title {
-            font-family: var(--font-heading);
-            font-size: 38px;
-            font-weight: 800;
-            color: #1a1622;
-            line-height: 1.2;
+            font-size: 34px;
+            font-weight: 700;
+            color: #111827;
+            line-height: 1.25;
+            letter-spacing: -0.02em;
             margin-bottom: 14px;
         }
         .hero-title span {
             color: var(--primary);
+            font-weight: 800;
         }
         .hero-desc {
-            font-size: 15px;
+            font-size: 14.5px;
             color: var(--text-muted);
-            margin-bottom: 24px;
-            max-width: 580px;
+            margin-bottom: 22px;
+            max-width: 560px;
+            line-height: 1.6;
         }
         .hero-features {
             display: flex;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 10px;
+            margin-bottom: 0;
         }
         .feature-pill {
-            background: #ffffff;
+            background: #f9fafb;
             border: 1px solid var(--border-light);
-            border-radius: 20px;
-            padding: 6px 14px;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--secondary);
+            border-radius: var(--radius-sm);
+            padding: 5px 12px;
+            font-size: 12px;
+            font-weight: 500;
+            color: #374151;
             display: inline-flex;
             align-items: center;
             gap: 6px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.03);
         }
 
         .hero-card-preview {
             display: flex;
-            gap: 15px;
+            gap: 14px;
             justify-content: center;
         }
         .preview-img-box {
             position: relative;
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-sm);
             overflow: hidden;
-            box-shadow: var(--shadow-subtle);
-            border: 3px solid #fff;
-            transition: transform 0.3s;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-light);
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         .preview-img-box:hover {
-            transform: translateY(-6px);
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-hover);
         }
         .preview-img-box img {
-            width: 170px;
-            height: 250px;
+            width: 160px;
+            height: 235px;
             object-fit: cover;
             display: block;
         }
         .preview-label {
             position: absolute;
-            bottom: 8px;
-            left: 8px;
-            right: 8px;
-            background: rgba(255, 255, 255, 0.92);
-            backdrop-filter: blur(4px);
-            padding: 4px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
+            bottom: 6px;
+            left: 6px;
+            right: 6px;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3px 6px;
+            border-radius: 4px;
+            font-size: 10.5px;
+            font-weight: 600;
             text-align: center;
-            color: var(--secondary);
+            color: #111827;
+            letter-spacing: 0.02em;
         }
 
         /* Controls Section (Search & Filter) */
         .controls-section {
             background-color: #ffffff;
             border-bottom: 1px solid var(--border-light);
-            padding: 18px 24px;
+            padding: 14px 24px;
             position: sticky;
-            top: 73px;
+            top: 63px;
             z-index: 900;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            box-shadow: 0 1px 3px rgba(0,0,0,0.02);
         }
         .controls-container {
             max-width: 1280px;
@@ -314,38 +337,38 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 16px;
+            gap: 14px;
         }
 
         .search-box-wrapper {
             position: relative;
             flex: 1;
-            min-width: 260px;
-            max-width: 420px;
+            min-width: 250px;
+            max-width: 400px;
         }
         .search-icon {
             position: absolute;
-            left: 14px;
+            left: 12px;
             top: 50%;
             transform: translateY(-50%);
-            color: #999;
-            font-size: 16px;
+            color: #9ca3af;
+            font-size: 14px;
         }
         .search-bar {
             width: 100%;
-            padding: 10px 16px 10px 40px;
-            border: 1.5px solid var(--border-light);
-            border-radius: 25px;
-            font-size: 14px;
+            padding: 9px 14px 9px 36px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-size: 13.5px;
             font-family: inherit;
             outline: none;
-            background: var(--bg-cream);
-            transition: all 0.2s;
+            background: #ffffff;
+            color: #111827;
+            transition: all 0.15s ease;
         }
         .search-bar:focus {
-            background: #fff;
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(134, 16, 106, 0.1);
+            border-color: #111827;
+            box-shadow: 0 0 0 2px rgba(17, 24, 39, 0.08);
         }
 
         .categories {
@@ -359,53 +382,55 @@
             display: none;
         }
         .cat-btn {
-            background: #fff;
-            border: 1.5px solid var(--border-light);
-            padding: 8px 18px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            padding: 7px 15px;
+            border-radius: var(--radius-sm);
+            font-size: 12.5px;
+            font-weight: 500;
             cursor: pointer;
             white-space: nowrap;
-            transition: all 0.2s;
-            color: var(--secondary);
+            transition: all 0.15s ease;
+            color: #4b5563;
             font-family: inherit;
         }
         .cat-btn.active, .cat-btn:hover {
-            background: var(--primary);
-            color: #fff;
-            border-color: var(--primary);
+            background: #111827;
+            color: #ffffff;
+            border-color: #111827;
+            font-weight: 600;
         }
         .cat-btn span.count {
             display: inline-block;
-            background: rgba(0, 0, 0, 0.08);
+            background: rgba(0, 0, 0, 0.05);
             padding: 1px 6px;
-            border-radius: 10px;
+            border-radius: 4px;
             font-size: 11px;
-            margin-left: 5px;
+            margin-left: 4px;
+            color: inherit;
         }
         .cat-btn.active span.count {
-            background: rgba(255, 255, 255, 0.25);
-            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffffff;
         }
 
         .sort-wrapper {
             display: flex;
             align-items: center;
             gap: 8px;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12.5px;
+            font-weight: 500;
             color: var(--text-muted);
         }
         .sort-select {
-            padding: 8px 12px;
-            border: 1.5px solid var(--border-light);
-            border-radius: 12px;
-            background: #fff;
+            padding: 7px 12px;
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            background: #ffffff;
             font-family: inherit;
-            font-size: 13px;
-            font-weight: 600;
-            color: var(--secondary);
+            font-size: 12.5px;
+            font-weight: 500;
+            color: #111827;
             outline: none;
             cursor: pointer;
         }
@@ -413,54 +438,54 @@
         /* Results Status Bar */
         .results-bar {
             max-width: 1280px;
-            margin: 20px auto 10px auto;
+            margin: 18px auto 8px auto;
             padding: 0 24px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
         }
         .results-count b {
-            color: var(--secondary);
+            color: #111827;
+            font-weight: 600;
         }
 
         /* Products Grid */
         .container {
             max-width: 1280px;
-            margin: 10px auto 60px auto;
+            margin: 10px auto 50px auto;
             padding: 0 24px;
         }
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 28px;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 22px;
         }
 
-        /* Product Card */
+        /* Product Card - Clean & Minimal */
         .card {
             background: var(--bg-card);
-            border-radius: var(--radius-md);
+            border-radius: var(--radius-sm);
             overflow: hidden;
             box-shadow: var(--shadow-subtle);
             border: 1px solid var(--border-light);
-            transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
             display: flex;
             flex-direction: column;
             position: relative;
         }
         .card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             box-shadow: var(--shadow-hover);
-            border-color: rgba(134, 16, 106, 0.25);
         }
 
         .card-img-wrap {
             position: relative;
             width: 100%;
-            height: 380px;
+            height: 350px;
             overflow: hidden;
-            background: #f4f0ec;
+            background: #f4f3f0;
             cursor: pointer;
         }
         .card-img-wrap img {
@@ -468,81 +493,80 @@
             height: 100%;
             object-fit: cover;
             object-position: top center;
-            transition: transform 0.4s ease;
+            transition: transform 0.35s ease;
         }
         .card:hover .card-img-wrap img {
-            transform: scale(1.05);
+            transform: scale(1.03);
         }
 
         .card-badge {
             position: absolute;
-            top: 12px;
-            left: 12px;
-            background: rgba(134, 16, 106, 0.9);
-            color: #fff;
-            padding: 4px 10px;
-            border-radius: 12px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
+            top: 10px;
+            left: 10px;
+            background: rgba(17, 24, 39, 0.88);
+            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.04em;
             text-transform: uppercase;
             backdrop-filter: blur(4px);
             z-index: 2;
         }
         .card-code {
             position: absolute;
-            bottom: 12px;
-            left: 12px;
-            background: rgba(255, 255, 255, 0.92);
-            color: #111;
-            padding: 3px 8px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 0.5px;
-            font-family: monospace;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            bottom: 10px;
+            left: 10px;
+            background: rgba(255, 255, 255, 0.94);
+            color: #374151;
+            padding: 2px 7px;
+            border-radius: 4px;
+            font-size: 10.5px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.06);
             z-index: 2;
         }
         .card-fav-btn {
             position: absolute;
-            top: 12px;
-            right: 12px;
-            background: rgba(255, 255, 255, 0.85);
-            border: none;
-            width: 34px;
-            height: 34px;
+            top: 10px;
+            right: 10px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(0,0,0,0.05);
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             cursor: pointer;
-            font-size: 16px;
-            color: #888;
-            transition: all 0.2s;
+            font-size: 13px;
+            color: #6b7280;
+            transition: all 0.15s ease;
             z-index: 2;
         }
         .card-fav-btn:hover, .card-fav-btn.active {
-            color: #e91e63;
-            background: #fff;
-            transform: scale(1.1);
+            color: #e11d48;
+            background: #ffffff;
+            transform: scale(1.08);
         }
 
         .card-quick-view {
             position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(46, 42, 57, 0.88);
-            color: #fff;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(17, 24, 39, 0.9);
+            color: #ffffff;
             border: none;
-            padding: 6px 12px;
-            border-radius: 14px;
-            font-size: 12px;
-            font-weight: 600;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 500;
             cursor: pointer;
             opacity: 0;
-            transform: translateY(6px);
-            transition: all 0.25s;
+            transform: translateY(4px);
+            transition: all 0.2s ease;
             z-index: 2;
         }
         .card:hover .card-quick-view {
@@ -551,28 +575,27 @@
         }
 
         .card-content {
-            padding: 16px 18px 18px 18px;
+            padding: 13px 14px 15px 14px;
             display: flex;
             flex-direction: column;
             flex-grow: 1;
             justify-content: space-between;
         }
         .card-meta {
-            font-size: 11px;
+            font-size: 10px;
             text-transform: uppercase;
-            font-weight: 700;
+            font-weight: 600;
             color: var(--accent-gold);
-            letter-spacing: 0.8px;
-            margin-bottom: 4px;
+            letter-spacing: 0.06em;
+            margin-bottom: 3px;
         }
         .card-title {
-            font-family: var(--font-heading);
-            font-size: 15px;
+            font-size: 13.5px;
             font-weight: 600;
-            color: #1a1622;
+            color: #111827;
             line-height: 1.35;
-            margin-bottom: 8px;
-            min-height: 40px;
+            margin-bottom: 7px;
+            min-height: 36px;
             display: -webkit-box;
             -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
@@ -581,155 +604,193 @@
         .card-sizes {
             display: flex;
             flex-wrap: wrap;
-            gap: 4px;
-            margin-bottom: 10px;
+            gap: 3px;
+            margin-bottom: 8px;
         }
         .size-tag {
-            font-size: 10px;
-            font-weight: 700;
-            background: var(--bg-cream);
-            color: var(--text-muted);
-            border: 1px solid var(--border-light);
-            padding: 2px 6px;
-            border-radius: 4px;
+            font-size: 9.5px;
+            font-weight: 600;
+            background: #f9fafb;
+            color: #6b7280;
+            border: 1px solid #f3f4f6;
+            padding: 1px 5px;
+            border-radius: 3px;
         }
         .card-pricing-row {
             display: flex;
             align-items: baseline;
-            gap: 8px;
-            margin-bottom: 14px;
+            gap: 7px;
+            margin-bottom: 12px;
         }
         .card-price {
-            font-size: 19px;
-            color: var(--primary);
+            font-size: 17px;
+            color: #111827;
             font-weight: 700;
-            font-family: var(--font-heading);
         }
         .card-mrp {
-            font-size: 13px;
-            color: #999;
+            font-size: 12px;
+            color: #9ca3af;
             text-decoration: line-through;
         }
         .card-discount {
-            font-size: 11px;
-            color: #2e7d32;
-            font-weight: 700;
-            background: #e8f5e9;
-            padding: 2px 6px;
-            border-radius: 4px;
+            font-size: 10.5px;
+            color: #047857;
+            font-weight: 600;
+            background: #ecfdf5;
+            padding: 1px 5px;
+            border-radius: 3px;
         }
 
         .btn-order-whatsapp {
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
-            background-color: var(--whatsapp-green);
+            gap: 6px;
+            background-color: #111827;
             color: #ffffff;
-            padding: 11px;
+            padding: 9px 12px;
             border-radius: var(--radius-sm);
             text-decoration: none;
-            font-size: 13px;
-            font-weight: 700;
-            transition: all 0.2s;
-            box-shadow: 0 3px 8px rgba(37, 211, 102, 0.2);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.02em;
+            transition: all 0.15s ease;
         }
+        
+        .card.highlight-card {
+            outline: 2px solid var(--primary);
+            box-shadow: 0 0 0 4px rgba(112, 26, 83, 0.15), var(--shadow-hover);
+            transform: translateY(-4px);
+            animation: highlightPulse 2s ease;
+        }
+        @keyframes highlightPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+            100% { transform: scale(1); }
+        }
+        .card-actions {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 6px;
+            align-items: center;
+        }
+        .btn-share {
+            background: #ffffff;
+            border: 1px solid var(--border-light);
+            color: #374151;
+            padding: 9px 12px;
+            border-radius: var(--radius-sm);
+            font-size: 12px;
+            font-weight: 600;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            transition: all 0.15s ease;
+            white-space: nowrap;
+        }
+        .btn-share:hover {
+            background: #f3f4f6;
+            color: #111827;
+            border-color: #d1d5db;
+        }
+
         .btn-order-whatsapp:hover {
-            background-color: var(--whatsapp-dark);
-            transform: translateY(-1px);
-            box-shadow: 0 5px 12px rgba(37, 211, 102, 0.3);
+            background-color: var(--whatsapp-green);
+            color: #ffffff;
         }
 
         /* Wholesale & Reseller Banner */
         .wholesale-section {
-            background: linear-gradient(135deg, #2e2a39 0%, #1a1622 100%);
-            color: #fff;
-            padding: 50px 24px;
-            margin-top: 40px;
+            background: #111827;
+            color: #ffffff;
+            padding: 48px 24px;
+            margin-top: 30px;
         }
         .wholesale-container {
             max-width: 1280px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 40px;
+            grid-template-columns: 1.25fr 0.75fr;
+            gap: 36px;
             align-items: center;
         }
         .wholesale-title {
-            font-family: var(--font-heading);
-            font-size: 30px;
+            font-size: 28px;
             font-weight: 700;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
             color: #ffffff;
+            letter-spacing: -0.01em;
         }
         .wholesale-title span {
-            color: #ffb74d;
+            color: #fbbf24;
         }
         .wholesale-text {
-            color: #ccc;
-            font-size: 15px;
-            margin-bottom: 20px;
+            color: #9ca3af;
+            font-size: 14px;
+            margin-bottom: 18px;
             line-height: 1.6;
         }
         .wholesale-perks {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-bottom: 25px;
+            gap: 10px;
+            margin-bottom: 22px;
         }
         .perk-item {
             display: flex;
             align-items: center;
-            gap: 10px;
-            font-size: 13px;
-            font-weight: 600;
-            color: #eee;
+            gap: 8px;
+            font-size: 12.5px;
+            font-weight: 500;
+            color: #e5e7eb;
         }
         .perk-item span.icon {
-            color: #ffb74d;
-            font-size: 16px;
+            color: #fbbf24;
+            font-size: 14px;
         }
         .btn-wholesale-wa {
-            background: #ffb74d;
-            color: #111;
-            padding: 12px 24px;
-            border-radius: 30px;
+            background: #fbbf24;
+            color: #111827;
+            padding: 10px 20px;
+            border-radius: var(--radius-sm);
             text-decoration: none;
-            font-weight: 700;
-            font-size: 14px;
+            font-weight: 600;
+            font-size: 13px;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            transition: all 0.2s;
+            gap: 6px;
+            transition: all 0.15s ease;
         }
         .btn-wholesale-wa:hover {
-            background: #ffa726;
-            transform: translateY(-2px);
+            background: #f59e0b;
         }
 
         .wholesale-card-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            border-radius: var(--radius-md);
-            padding: 28px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: var(--radius-sm);
+            padding: 24px;
             text-align: center;
         }
         .wholesale-card-box h3 {
-            font-family: var(--font-heading);
-            color: #fff;
-            margin-bottom: 10px;
-            font-size: 20px;
+            color: #ffffff;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-weight: 600;
         }
         .wholesale-card-box p {
-            color: #aaa;
-            font-size: 13px;
-            margin-bottom: 20px;
+            color: #9ca3af;
+            font-size: 12.5px;
+            margin-bottom: 16px;
+            line-height: 1.55;
         }
 
         /* About & Contact Section */
         .about-section {
-            padding: 60px 24px;
-            background: var(--bg-cream);
+            padding: 50px 24px;
+            background: #faf9f7;
             border-top: 1px solid var(--border-light);
         }
         .about-container {
@@ -737,58 +798,59 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 50px;
+            gap: 40px;
             align-items: center;
         }
         .about-title {
-            font-family: var(--font-heading);
-            font-size: 28px;
+            font-size: 26px;
             font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 15px;
+            color: #111827;
+            margin-bottom: 12px;
+            letter-spacing: -0.01em;
         }
         .about-text {
             color: var(--text-muted);
-            font-size: 14px;
-            line-height: 1.7;
-            margin-bottom: 15px;
+            font-size: 13.5px;
+            line-height: 1.65;
+            margin-bottom: 12px;
         }
         .contact-cards {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 15px;
+            gap: 12px;
         }
         .contact-card {
-            background: #fff;
+            background: #ffffff;
             border: 1px solid var(--border-light);
             border-radius: var(--radius-sm);
-            padding: 16px 20px;
+            padding: 14px 18px;
             display: flex;
             align-items: flex-start;
-            gap: 14px;
+            gap: 12px;
         }
         .contact-card .icon {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--primary);
         }
         .contact-card h4 {
-            font-size: 14px;
-            font-weight: 700;
-            color: var(--secondary);
+            font-size: 13.5px;
+            font-weight: 600;
+            color: #111827;
             margin-bottom: 2px;
         }
         .contact-card p {
-            font-size: 13px;
+            font-size: 12.5px;
             color: var(--text-muted);
+            line-height: 1.5;
         }
 
         /* Footer */
         footer {
-            background: #15131b;
-            color: #999;
-            padding: 40px 24px 30px 24px;
-            font-size: 13px;
-            border-top: 1px solid #282531;
+            background: #09090b;
+            color: #a1a1aa;
+            padding: 36px 24px 26px 24px;
+            font-size: 12.5px;
+            border-top: 1px solid #18181b;
         }
         .footer-container {
             max-width: 1280px;
@@ -797,28 +859,28 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
-            gap: 20px;
-            padding-bottom: 25px;
-            border-bottom: 1px solid #262330;
+            gap: 18px;
+            padding-bottom: 22px;
+            border-bottom: 1px solid #18181b;
         }
         .footer-logo {
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #fff;
-            font-family: var(--font-heading);
-            font-size: 18px;
+            color: #ffffff;
+            font-size: 16px;
             font-weight: 700;
+            letter-spacing: 0.04em;
         }
         .footer-logo img {
-            height: 38px;
+            height: 34px;
             filter: brightness(0) invert(1);
         }
         .footer-copy {
             text-align: center;
-            padding-top: 20px;
-            font-size: 12px;
-            color: #777;
+            padding-top: 18px;
+            font-size: 11.5px;
+            color: #71717a;
         }
 
         /* Quick View Modal */
@@ -828,8 +890,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            backdrop-filter: blur(4px);
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(3px);
             display: none;
             justify-content: center;
             align-items: center;
@@ -840,38 +902,47 @@
             display: flex;
         }
         .modal-box {
-            background: #fff;
-            border-radius: var(--radius-md);
-            max-width: 820px;
+            background: #ffffff;
+            border-radius: var(--radius-sm);
+            max-width: 780px;
             width: 100%;
             max-height: 90vh;
             overflow-y: auto;
             position: relative;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.25);
-            animation: modalPop 0.25s ease-out;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+            animation: modalPop 0.2s ease-out;
         }
         @keyframes modalPop {
-            from { transform: scale(0.92); opacity: 0; }
+            from { transform: scale(0.96); opacity: 0; }
             to { transform: scale(1); opacity: 1; }
         }
         .modal-close-btn {
             position: absolute;
-            top: 14px;
-            right: 14px;
-            background: #f0f0f0;
+            top: 12px;
+            right: 12px;
+            background: #f3f4f6;
             border: none;
-            width: 34px;
-            height: 34px;
+            width: 30px;
+            height: 30px;
             border-radius: 50%;
-            font-size: 18px;
-            font-weight: bold;
+            font-size: 16px;
+            font-weight: 600;
             cursor: pointer;
             z-index: 10;
+            color: #374151;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.15s ease;
+        }
+        .modal-close-btn:hover {
+            background: #e5e7eb;
+            color: #111827;
         }
         .modal-img-wrap {
-            background: #f7f3ef;
+            background: #f4f3f0;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -880,119 +951,116 @@
         .modal-img-wrap img {
             width: 100%;
             height: 100%;
-            max-height: 520px;
+            max-height: 480px;
             object-fit: cover;
             display: block;
         }
         .modal-info {
-            padding: 30px;
+            padding: 26px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
         }
         .modal-code {
-            font-family: monospace;
-            font-size: 12px;
-            font-weight: 700;
-            color: var(--primary);
-            background: var(--primary-light);
-            padding: 3px 8px;
-            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            color: #374151;
+            background: #f3f4f6;
+            padding: 2px 7px;
+            border-radius: 3px;
             display: inline-block;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
             width: fit-content;
         }
         .modal-title {
-            font-family: var(--font-heading);
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 12px;
+            color: #111827;
+            margin-bottom: 10px;
             line-height: 1.3;
         }
         .modal-pricing {
             display: flex;
             align-items: baseline;
-            gap: 10px;
-            margin-bottom: 14px;
+            gap: 8px;
+            margin-bottom: 12px;
         }
         .modal-price {
-            font-size: 24px;
-            font-weight: 800;
-            color: var(--primary);
-            font-family: var(--font-heading);
+            font-size: 22px;
+            font-weight: 700;
+            color: #111827;
         }
         .modal-mrp {
-            font-size: 15px;
-            color: #999;
+            font-size: 13.5px;
+            color: #9ca3af;
             text-decoration: line-through;
         }
         .modal-desc {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 16px;
+            line-height: 1.55;
+            margin-bottom: 14px;
         }
         .modal-details-list {
             list-style: none;
-            font-size: 13px;
-            margin-bottom: 20px;
-            background: var(--bg-cream);
-            padding: 12px 16px;
-            border-radius: 8px;
+            font-size: 12.5px;
+            margin-bottom: 18px;
+            background: #f9fafb;
+            padding: 10px 14px;
+            border-radius: 4px;
             border: 1px solid var(--border-light);
         }
         .modal-details-list li {
-            margin-bottom: 6px;
+            margin-bottom: 5px;
         }
         .modal-details-list li strong {
-            color: var(--secondary);
+            color: #111827;
+            font-weight: 600;
         }
 
         /* Floating WhatsApp Button */
         .floating-whatsapp {
             position: fixed;
-            bottom: 24px;
-            right: 24px;
+            bottom: 22px;
+            right: 22px;
             background-color: var(--whatsapp-green);
-            color: #fff;
-            width: 58px;
-            height: 58px;
+            color: #ffffff;
+            width: 52px;
+            height: 52px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 4px 16px rgba(37, 211, 102, 0.4);
+            box-shadow: 0 4px 14px rgba(37, 211, 102, 0.35);
             cursor: pointer;
             z-index: 1500;
-            transition: all 0.25s;
+            transition: transform 0.2s ease;
             text-decoration: none;
         }
         .floating-whatsapp:hover {
-            transform: scale(1.1);
-            background-color: var(--whatsapp-dark);
+            transform: scale(1.08);
         }
         .floating-whatsapp svg {
-            width: 32px;
-            height: 32px;
-            fill: #fff;
+            width: 28px;
+            height: 28px;
+            fill: #ffffff;
         }
 
         /* Toast notification */
         .toast {
             position: fixed;
-            bottom: 30px;
+            bottom: 26px;
             left: 50%;
-            transform: translateX(-50%) translateY(100px);
-            background: #2e2a39;
-            color: #fff;
-            padding: 10px 20px;
+            transform: translateX(-50%) translateY(80px);
+            background: #111827;
+            color: #ffffff;
+            padding: 9px 18px;
             border-radius: 20px;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12.5px;
+            font-weight: 500;
             z-index: 3000;
-            transition: transform 0.3s ease;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transition: transform 0.25s ease;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.18);
         }
         .toast.show {
             transform: translateX(-50%) translateY(0);
@@ -1002,55 +1070,43 @@
         @media (max-width: 1024px) {
             .hero-container, .wholesale-container, .about-container {
                 grid-template-columns: 1fr;
-                gap: 25px;
+                gap: 22px;
             }
             .hero-card-preview {
                 display: none;
             }
             .grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 20px;
+                gap: 16px;
             }
             .modal-box {
                 grid-template-columns: 1fr;
-                max-width: 550px;
+                max-width: 500px;
             }
             .modal-img-wrap img {
-                max-height: 340px;
+                max-height: 320px;
             }
         }
 
         @media (max-width: 768px) {
             .announcement-bar {
                 font-size: 11px;
-                padding: 7px 12px;
-                line-height: 1.4;
-            }
-            .announcement-bar a {
-                display: inline-block;
-                margin-top: 2px;
-            }
-            header {
-                position: sticky;
-                top: 0;
+                padding: 6px 12px;
             }
             .nav-container {
-                padding: 10px 16px;
+                padding: 9px 16px;
             }
             .brand-logo-img {
-                height: 40px;
+                height: 36px;
             }
             .brand-title {
-                font-size: 17px;
+                font-size: 16px;
             }
             .brand-subtitle {
-                font-size: 9px;
-                letter-spacing: 1px;
+                font-size: 8.5px;
             }
             .hamburger {
                 display: block;
-                padding: 4px;
-                line-height: 1;
             }
             .nav-links {
                 display: none;
@@ -1060,8 +1116,8 @@
                 left: 0;
                 width: 100%;
                 background: #ffffff;
-                box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-                padding: 16px 0;
+                box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+                padding: 14px 0;
                 text-align: center;
                 border-top: 1px solid var(--border-light);
                 gap: 0;
@@ -1074,277 +1130,235 @@
             }
             .nav-links a {
                 display: block;
-                padding: 10px 20px;
-                font-size: 15px;
+                padding: 9px 18px;
+                font-size: 14px;
             }
-            .nav-links a:hover::after {
+            .nav-links a::after {
                 display: none;
             }
-            .nav-actions {
-                gap: 8px;
-            }
-            .wishlist-btn {
-                padding: 6px 10px;
-                font-size: 12px;
-            }
-            .btn-whatsapp-header {
-                padding: 6px 12px;
-                font-size: 12px;
-            }
-
-            /* Controls Toolbar on Tablet/Mobile */
             .controls-section {
-                top: 61px;
-                padding: 12px 16px;
+                top: 56px;
+                padding: 10px 16px;
             }
             .controls-container {
                 flex-direction: column;
                 align-items: stretch;
-                gap: 12px;
+                gap: 10px;
             }
             .search-box-wrapper {
                 max-width: 100%;
                 min-width: 100%;
             }
             .categories {
-                padding-bottom: 4px;
+                padding-bottom: 2px;
                 -webkit-overflow-scrolling: touch;
             }
             .cat-btn {
-                padding: 7px 14px;
-                font-size: 12px;
+                padding: 6px 12px;
+                font-size: 11.5px;
             }
             .sort-wrapper {
                 justify-content: space-between;
                 width: 100%;
             }
-
-            /* Hero */
             .hero-section {
-                padding: 28px 16px;
+                padding: 24px 16px;
             }
             .hero-title {
-                font-size: 26px;
+                font-size: 24px;
             }
             .hero-desc {
                 font-size: 13px;
-                margin-bottom: 16px;
+                margin-bottom: 14px;
             }
-
-            /* Product Grid */
             .container {
                 padding: 0 16px;
-                margin: 10px auto 40px auto;
+                margin: 10px auto 36px auto;
             }
             .grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 14px;
+                gap: 12px;
             }
             .card-img-wrap {
-                height: 250px;
+                height: 235px;
             }
             .card-title {
-                font-size: 13px;
-                min-height: 36px;
+                font-size: 12.5px;
+                min-height: 34px;
             }
             .card-price {
-                font-size: 16px;
+                font-size: 15px;
             }
-            .btn-order-whatsapp {
-                padding: 8px 10px;
-                font-size: 11px;
-            }
-
-            /* Wholesale & About */
             .wholesale-section {
-                padding: 35px 16px;
+                padding: 32px 16px;
             }
             .wholesale-title {
-                font-size: 24px;
+                font-size: 22px;
             }
             .wholesale-perks {
                 grid-template-columns: 1fr;
             }
             .about-section {
-                padding: 40px 16px;
+                padding: 36px 16px;
             }
             .about-title {
-                font-size: 22px;
+                font-size: 20px;
             }
             .footer-container {
                 flex-direction: column;
                 text-align: center;
-                gap: 16px;
+                gap: 14px;
             }
         }
 
         @media (max-width: 480px) {
             .announcement-bar {
-                font-size: 10.5px;
-                padding: 6px 10px;
+                font-size: 10px;
+                padding: 6px 8px;
             }
             .nav-container {
-                padding: 8px 12px;
+                padding: 7px 12px;
             }
             .brand-logo-img {
-                height: 34px;
+                height: 32px;
             }
             .brand-title {
-                font-size: 15px;
+                font-size: 14.5px;
             }
             .brand-subtitle {
                 font-size: 8px;
-                letter-spacing: 0.5px;
             }
             .btn-whatsapp-header .wa-label {
                 display: none;
             }
             .btn-whatsapp-header {
-                padding: 6px 9px;
-                font-size: 13px;
-            }
-            .wishlist-btn {
-                padding: 6px 8px;
-                font-size: 11px;
-            }
-
-            /* Sticky toolbar offset on small mobile */
-            .controls-section {
-                top: 53px;
-                padding: 10px 12px;
-            }
-            .search-bar {
-                padding: 8px 14px 8px 34px;
-                font-size: 13px;
-            }
-            .results-bar {
-                padding: 0 14px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 4px;
+                padding: 5px 8px;
                 font-size: 12px;
             }
-
-            /* 2-Column Mobile Grid for Products */
+            .wishlist-btn {
+                padding: 5px 7px;
+                font-size: 11px;
+            }
+            .controls-section {
+                top: 48px;
+                padding: 8px 12px;
+            }
+            .search-bar {
+                padding: 7px 12px 7px 32px;
+                font-size: 12.5px;
+            }
+            .results-bar {
+                padding: 0 12px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 3px;
+                font-size: 11.5px;
+            }
             .container {
                 padding: 0 10px;
             }
             .grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
-                gap: 10px;
+                gap: 9px;
             }
             .card-img-wrap {
-                height: 200px;
+                height: 195px;
             }
             .card-badge {
-                font-size: 8.5px;
-                padding: 2px 6px;
-                top: 6px;
-                left: 6px;
+                font-size: 8px;
+                padding: 2px 5px;
+                top: 5px;
+                left: 5px;
             }
             .card-code {
-                font-size: 8.5px;
-                padding: 2px 5px;
-                bottom: 6px;
-                left: 6px;
+                font-size: 8px;
+                padding: 1px 4px;
+                bottom: 5px;
+                left: 5px;
             }
             .card-fav-btn {
-                width: 28px;
-                height: 28px;
-                font-size: 13px;
-                top: 6px;
-                right: 6px;
+                width: 26px;
+                height: 26px;
+                font-size: 12px;
+                top: 5px;
+                right: 5px;
             }
             .card-quick-view {
-                display: none; /* Mobile users tap the image directly */
+                display: none;
             }
             .card-content {
-                padding: 9px 8px 10px 8px;
+                padding: 8px 7px 9px 7px;
             }
             .card-meta {
-                font-size: 9px;
-                letter-spacing: 0.4px;
-                margin-bottom: 2px;
+                font-size: 8.5px;
             }
             .card-title {
-                font-size: 11.5px;
-                min-height: 32px;
+                font-size: 11px;
+                min-height: 30px;
                 line-height: 1.3;
                 margin-bottom: 4px;
             }
             .card-sizes {
                 gap: 2px;
-                margin-bottom: 6px;
+                margin-bottom: 5px;
             }
             .size-tag {
-                font-size: 8.5px;
-                padding: 1px 4px;
+                font-size: 8px;
+                padding: 1px 3px;
             }
             .card-pricing-row {
-                gap: 5px;
-                margin-bottom: 8px;
+                gap: 4px;
+                margin-bottom: 7px;
             }
             .card-price {
-                font-size: 14.5px;
+                font-size: 14px;
             }
             .card-mrp {
-                font-size: 11px;
+                font-size: 10.5px;
             }
             .card-discount {
-                font-size: 8.5px;
-                padding: 1px 4px;
+                font-size: 8px;
+                padding: 1px 3px;
             }
             .btn-order-whatsapp {
-                padding: 7px 6px;
-                font-size: 10.5px;
-                border-radius: 6px;
-                gap: 4px;
+                padding: 6px 5px;
+                font-size: 10px;
+                border-radius: 4px;
             }
-
-            /* Modal Mobile */
             .modal-overlay {
                 padding: 10px;
             }
             .modal-box {
                 width: 100%;
                 max-height: 88vh;
-                border-radius: var(--radius-sm);
             }
             .modal-img-wrap img {
-                max-height: 260px;
+                max-height: 240px;
             }
             .modal-info {
-                padding: 16px 14px;
+                padding: 14px 12px;
             }
             .modal-title {
-                font-size: 16px;
-                margin-bottom: 8px;
+                font-size: 15px;
             }
             .modal-price {
-                font-size: 20px;
+                font-size: 18px;
             }
             .modal-desc {
-                font-size: 12.5px;
-                margin-bottom: 12px;
-            }
-            .modal-details-list {
-                padding: 10px 12px;
                 font-size: 12px;
-                margin-bottom: 14px;
             }
-
-            /* Floating button */
             .floating-whatsapp {
-                width: 48px;
-                height: 48px;
-                bottom: 16px;
-                right: 16px;
+                width: 46px;
+                height: 46px;
+                bottom: 14px;
+                right: 14px;
             }
             .floating-whatsapp svg {
-                width: 26px;
-                height: 26px;
+                width: 24px;
+                height: 24px;
             }
         }
+
     </style>
 </head>
 <body>
@@ -1589,9 +1603,14 @@
                     </ul>
                 </div>
 
-                <a href="#" id="modalWaBtn" target="_blank" class="btn-order-whatsapp" style="padding: 14px; font-size: 14px;">
-                    💬 Order this Design on WhatsApp
-                </a>
+                <div style="display: flex; gap: 8px; margin-top: 10px;">
+                    <a href="#" id="modalWaBtn" target="_blank" class="btn-order-whatsapp" style="flex: 1; padding: 12px; font-size: 13px;">
+                        💬 Order this Design on WhatsApp
+                    </a>
+                    <button id="modalShareBtn" onclick="shareCurrentProduct()" class="btn-share" title="Share or Copy Direct Link" style="padding: 12px 14px;">
+                        🔗 Share
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -1617,12 +1636,118 @@
         let currentSort = 'featured';
         let favorites = JSON.parse(localStorage.getItem('doption_favorites') || '[]');
         let showFavoritesOnly = false;
+        let currentModalProductId = null;
+
+        // Helper: Generate shareable online link for a product
+        function getProductShareUrl(productId) {
+            let baseUrl;
+            if (window.location.protocol === 'file:') {
+                baseUrl = 'https://biravid.github.io/Doption-collections/';
+            } else {
+                baseUrl = window.location.origin + window.location.pathname;
+            }
+            const cleanBase = baseUrl.replace(/\/index\.html$/, '').replace(/\/$/, '');
+            return `${cleanBase}/?product=${encodeURIComponent(productId)}`;
+        }
+
+        // Helper: Build WhatsApp message containing complete dress details & direct link
+        function buildWhatsAppMessage(product) {
+            const productUrl = getProductShareUrl(product.id);
+            const discount = Math.round(((product.mrp - product.price) / product.mrp) * 100);
+            
+            let msg = "*D'OPTION FASHION BRAND - ORDER ENQUIRY* ✨\n\n";
+            msg += `👗 *Dress:* ${product.name}\n`;
+            msg += `🏷️ *Product Code:* ${product.id}\n`;
+            msg += `💰 *Price:* ₹${product.price.toLocaleString('en-IN')} (MRP: ₹${product.mrp.toLocaleString('en-IN')}, ${discount}% OFF)\n`;
+            msg += `🧵 *Fabric:* ${product.fabric}\n`;
+            if (product.dupatta && product.dupatta !== 'N/A' && !product.dupatta.includes('Single Piece')) {
+                msg += `🧣 *Dupatta:* ${product.dupatta}\n`;
+            }
+            msg += `📏 *Available Sizes:* ${product.sizes.join(', ')}\n\n`;
+            msg += `🔗 *Direct Product Link:*\n${productUrl}\n\n`;
+            msg += "Hello D'Option Team, please confirm size availability and dispatch details. Thank you!";
+
+            return encodeURIComponent(msg);
+        }
+
+        // Helper: Check URL parameter (?product=XYZ or #XYZ) to automatically open the target dress
+        function checkUrlProductParam() {
+            try {
+                const params = new URLSearchParams(window.location.search);
+                let productId = params.get('product') || params.get('id') || params.get('item');
+                if (!productId && window.location.hash) {
+                    productId = window.location.hash.replace(/^#/, '');
+                }
+                if (!productId) return;
+
+                const clean = str => (str || '').replace(/[-_ ]/g, '').toUpperCase();
+                const targetProduct = products.find(p => clean(p.id) === clean(productId));
+
+                if (targetProduct) {
+                    // Ensure the category is active so product exists in DOM
+                    if (currentCategory !== 'all' && currentCategory !== targetProduct.category) {
+                        currentCategory = 'all';
+                        const catButtons = document.querySelectorAll('.cat-btn');
+                        catButtons.forEach(b => b.classList.remove('active'));
+                        const allBtn = document.querySelector('.cat-btn');
+                        if (allBtn) allBtn.classList.add('active');
+                        renderProducts();
+                    }
+
+                    setTimeout(() => {
+                        openModal(targetProduct.id);
+                        const cardEl = document.querySelector(`.card[data-id="${targetProduct.id}"]`);
+                        if (cardEl) {
+                            cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                            cardEl.classList.add('highlight-card');
+                            setTimeout(() => cardEl.classList.remove('highlight-card'), 3500);
+                        }
+                    }, 200);
+                }
+            } catch (err) {
+                console.error("Error checking URL product parameter:", err);
+            }
+        }
+
+        // Share or copy product link
+        function shareProduct(id, event) {
+            if (event) event.stopPropagation();
+            const product = products.find(p => p.id === id);
+            if (!product) return;
+
+            const url = getProductShareUrl(product.id);
+            if (navigator.share) {
+                navigator.share({
+                    title: `D'Option - ${product.name}`,
+                    text: `Check out ${product.name} (${product.id}) on D'Option:`,
+                    url: url
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(url).then(() => {
+                    showToast("Product link copied to clipboard! 📋");
+                }).catch(() => {
+                    prompt("Copy product link:", url);
+                });
+            }
+        }
+
+        function shareCurrentProduct() {
+            if (currentModalProductId) {
+                shareProduct(currentModalProductId);
+            }
+        }
 
         // Initialize Page
         document.addEventListener('DOMContentLoaded', () => {
             updateCategoryCounts();
             renderProducts();
             updateFavCount();
+            checkUrlProductParam();
+        });
+
+        // Listen for browser back/forward buttons
+        window.addEventListener('popstate', () => {
+            checkUrlProductParam();
         });
 
         // Mobile Menu Toggle & Auto-Close
@@ -1694,7 +1819,7 @@
             grid.innerHTML = filtered.map(product => {
                 const isFav = favorites.includes(product.id);
                 const discount = Math.round(((product.mrp - product.price) / product.mrp) * 100);
-                const waMessage = encodeURIComponent(`Hi D'Option, I would like to order: ${product.id} - ${product.name} (Price: ₹${product.price.toLocaleString('en-IN')}). Please confirm size availability.`);
+                const waMessage = buildWhatsAppMessage(product);
                 const waUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
 
                 return `
@@ -1721,9 +1846,14 @@
                                     <span class="card-discount">${discount}% OFF</span>
                                 </div>
                             </div>
-                            <a href="${waUrl}" target="_blank" class="btn-order-whatsapp">
-                                <span>💬 Order on WhatsApp</span>
-                            </a>
+                            <div class="card-actions">
+                                <a href="${waUrl}" target="_blank" class="btn-order-whatsapp">
+                                    <span>💬 Order on WhatsApp</span>
+                                </a>
+                                <button class="btn-share" onclick="shareProduct('${product.id}', event)" title="Share or Copy Direct Link">
+                                    <span>🔗</span>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 `;
@@ -1835,8 +1965,16 @@
             document.getElementById('modalDupatta').innerText = product.dupatta;
             document.getElementById('modalSizes').innerText = product.sizes.join(', ');
 
-            const waMessage = encodeURIComponent(`Hi D'Option, I would like to order: ${product.id} - ${product.name} (Price: ₹${product.price.toLocaleString('en-IN')}). Please confirm available sizes and dispatch time.`);
+            currentModalProductId = product.id;
+            const waMessage = buildWhatsAppMessage(product);
             document.getElementById('modalWaBtn').href = `https://wa.me/${WHATSAPP_NUMBER}?text=${waMessage}`;
+
+            // Update URL without reload to allow direct sharing
+            try {
+                const newUrl = new URL(window.location);
+                newUrl.searchParams.set('product', product.id);
+                window.history.replaceState({ product: product.id }, '', newUrl.toString());
+            } catch(e) {}
 
             document.getElementById('productModal').classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1845,6 +1983,13 @@
         function closeModal() {
             document.getElementById('productModal').classList.remove('active');
             document.body.style.overflow = 'auto';
+            currentModalProductId = null;
+            // Clean URL query param on close
+            try {
+                const cleanUrl = new URL(window.location);
+                cleanUrl.searchParams.delete('product');
+                window.history.replaceState({}, '', cleanUrl.toString());
+            } catch(e) {}
         }
 
         function closeModalOnOverlay(e) {
